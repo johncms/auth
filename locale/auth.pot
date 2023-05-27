@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"X-Domain: auth\n"
+
+#: modules/johncms/auth/config/places.php:11
+#: modules/johncms/auth/config/places.php:12
+#: modules/johncms/auth/src/Controllers/LoginController.php:30
+#: modules/johncms/auth/src/Controllers/LoginController.php:31
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:28
+msgid "Login"
+msgstr ""
+
+#: modules/johncms/auth/config/places.php:13
+#: modules/johncms/auth/config/places.php:14
+#: modules/johncms/auth/config/places.php:15
+#: modules/johncms/auth/src/Controllers/RegistrationController.php:34
+#: modules/johncms/auth/src/Controllers/RegistrationController.php:35
+#: modules/johncms/auth/templates/index.blade.php:13
+#: modules/johncms/auth/templates/index.blade.php:32
+#: modules/johncms/auth/templates/login_form.blade.php:18
+msgid "Registration"
+msgstr ""
+
+#: modules/johncms/auth/config/places.php:16
+msgid "Confirms the e-mail"
+msgstr ""
+
+#: modules/johncms/auth/config/places.php:17
+#: modules/johncms/auth/config/places.php:18
+#: modules/johncms/auth/src/Controllers/LogoutController.php:26
+#: modules/johncms/auth/src/Controllers/LogoutController.php:27
+msgid "Logout"
+msgstr ""
+
+#: modules/johncms/auth/src/Controllers/RegistrationController.php:90
+msgid "Confirmation of registration"
+msgstr ""
+
+#: modules/johncms/auth/src/Controllers/RegistrationController.php:108
+msgid "The user wasn't found"
+msgstr ""
+
+#: modules/johncms/auth/src/Controllers/RegistrationController.php:123
+msgid "Registration is temporarily closed"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:28
+msgid "Username"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:29
+msgctxt "placeholder"
+msgid "Enter your username"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:35
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:83
+msgid "Password"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:36
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:84
+msgctxt "placeholder"
+msgid "Password"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:41
+msgid "Remember me"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:48
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:101
+msgid "Enter verification code"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/LoginForm.php:49
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:102
+msgctxt "placeholder"
+msgid "Verification code"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:29
+msgctxt "placeholder"
+msgid "Enter your login"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:32
+#, php-format
+msgid "Min. %s, Max. %s character. Allowed letters of the latin alphabets and numbers."
+msgid_plural "Min. %s, Max. %s characters. Allowed letters of the latin alphabets and numbers."
+msgstr[0] ""
+
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:73
+msgid "E-mail"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:74
+msgctxt "placeholder"
+msgid "Enter your e-mail"
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:76
+msgid "Specify an existing e-mail because a confirmation of registration will be sent to it."
+msgstr ""
+
+#: modules/johncms/auth/src/Forms/RegistrationForm.php:87
+#, php-format
+msgid "Min. %s character."
+msgid_plural "Min. %s characters."
+msgstr[0] ""
+
+#: modules/johncms/auth/src/Services/UserRegistrationService.php:90
+msgid "Registration on the website"
+msgstr ""
+
+#: modules/johncms/auth/src/Services/UserRegistrationService.php:106
+msgid "The user was not found, has already been confirmed, or the confirmation code is incorrect"
+msgstr ""
+
+#: modules/johncms/auth/templates/email_confirmed.blade.php:3
+msgid "Thanks! Your e-mail has been successfully confirmed."
+msgstr ""
+
+#: modules/johncms/auth/templates/index.blade.php:16
+msgid "You can get authorized on the site after confirmation of your registration."
+msgstr ""
+
+#: modules/johncms/auth/templates/index.blade.php:20
+msgid "Please, do not register names like 111, shhhh, uuuu, etc. They will be deleted. <br /> Also all the profiles registered via proxy servers will be deleted"
+msgstr ""
+
+#: modules/johncms/auth/templates/index.blade.php:29
+#, php-format
+msgid "By signing up, you agree to the <a href=\"%s\">Terms of Service</a> and <a href=\"%s\">Privacy Policy</a>, including <a href=\"%s\">Cookie Use</a>."
+msgstr ""
+
+#: modules/johncms/auth/templates/login_form.blade.php:4
+msgid "Authorization"
+msgstr ""
+
+#: modules/johncms/auth/templates/login_form.blade.php:15
+msgid "Log in"
+msgstr ""
+
+#: modules/johncms/auth/templates/login_form.blade.php:16
+msgid "Forgot password?"
+msgstr ""
+
+#: modules/johncms/auth/templates/logout_form.blade.php:4
+msgid "Are you sure you want to leave the site?"
+msgstr ""
+
+#: modules/johncms/auth/templates/logout_form.blade.php:9
+msgid "Confirm"
+msgstr ""
+
+#: modules/johncms/auth/templates/logout_form.blade.php:10
+msgid "Cancel"
+msgstr ""
+
+#: modules/johncms/auth/templates/registration_result.blade.php:13
+msgid "Congratulations! You have successfully registered on the site."
+msgstr ""
+
+#: modules/johncms/auth/templates/registration_result.blade.php:20
+msgid "Please, wait until a moderator approves your registration"
+msgstr ""
+
+#: modules/johncms/auth/templates/registration_result.blade.php:22
+msgid "Enter"
+msgstr ""
