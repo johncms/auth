@@ -38,10 +38,8 @@ class RegistrationController extends BaseController
     /**
      * @throws Throwable
      */
-    public function index(): string
+    public function index(RegistrationForm $registrationForm): string
     {
-        $registrationForm = new RegistrationForm();
-
         $data = [
             'formFields'       => $registrationForm->getFormFields(),
             'validationErrors' => $registrationForm->getValidationErrors(),
@@ -58,9 +56,8 @@ class RegistrationController extends BaseController
     /**
      * @throws Throwable
      */
-    public function store(UserRegistrationService $registrationService): string|RedirectResponse
+    public function store(UserRegistrationService $registrationService, RegistrationForm $registrationForm): string|RedirectResponse
     {
-        $registrationForm = new RegistrationForm();
         try {
             // Validate the form
             $registrationForm->validate();

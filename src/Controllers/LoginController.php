@@ -34,13 +34,11 @@ class LoginController extends BaseController
     /**
      * @throws Throwable
      */
-    public function index(Session $session): string
+    public function index(Session $session, LoginForm $loginForm): string
     {
-        $registrationForm = new LoginForm();
-
         $data = [
-            'formFields'       => $registrationForm->getFormFields(),
-            'validationErrors' => $registrationForm->getValidationErrors(),
+            'formFields'       => $loginForm->getFormFields(),
+            'validationErrors' => $loginForm->getValidationErrors(),
             'storeUrl'         => route('login.authorize'),
             'registrationUrl'  => route('registration.index'),
             'authError'        => $session->getFlash('authError'),
@@ -53,13 +51,13 @@ class LoginController extends BaseController
         UserManager $userManager,
         Session $session,
         SessionAuthProvider $sessionAuthProvider,
-        CookiesAuthProvider $cookiesAuthProvider
+        CookiesAuthProvider $cookiesAuthProvider,
+        LoginForm $loginForm
     ): RedirectResponse {
-        $registrationForm = new LoginForm();
         try {
             // Validate the form
-            $registrationForm->validate();
-            $values = $registrationForm->getRequestValues();
+            $loginForm->validate();
+            $values = $loginForm->getRequestValues();
 
             try {
                 // Try to check credentials and authorize the user
