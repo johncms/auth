@@ -37,11 +37,12 @@ class LoginController extends BaseController
     public function index(Session $session, LoginForm $loginForm): string
     {
         $data = [
-            'formFields'       => $loginForm->getFormFields(),
-            'validationErrors' => $loginForm->getValidationErrors(),
-            'storeUrl'         => route('login.authorize'),
-            'registrationUrl'  => route('registration.index'),
-            'authError'        => $session->getFlash('authError'),
+            'formFields'         => $loginForm->getFormFields(),
+            'validationErrors'   => $loginForm->getValidationErrors(),
+            'storeUrl'           => route('login.authorize'),
+            'registrationUrl'    => route('registration.index'),
+            'restorePasswordUrl' => route('auth.restorePassword'),
+            'authError'          => $session->getFlash('authError'),
         ];
 
         return $this->render->render('johncms/auth::login_form', ['data' => $data]);

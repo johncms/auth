@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Johncms\Auth\Controllers\LoginController;
 use Johncms\Auth\Controllers\LogoutController;
 use Johncms\Auth\Controllers\RegistrationController;
+use Johncms\Auth\Controllers\RestorePasswordController;
 use Johncms\Auth\Middlewares\RegistrationClosedMiddleware;
 use Johncms\Router\RouteCollection;
 use Johncms\Users\Middlewares\AuthorizedUserMiddleware;
@@ -35,6 +36,9 @@ return function (RouteCollection $router) {
             ->setName('registration.confirmEmail');
 
         $route->get('/closed/', [RegistrationController::class, 'registrationClosed'])->setName('registration.closed');
+
+        $route->map(['GET', 'POST'], '/auth/restore-password/', [RestorePasswordController::class, 'index'])->setName('auth.restorePassword');
+        $route->map(['GET', 'POST'], '/auth/restore-password/change-password/{userId:number}/', [RestorePasswordController::class, 'changePassword'])->setName('auth.restorePassword.changePassword');
     })->addMiddleware(UnauthorizedUserMiddleware::class);
 
     // Logout routes

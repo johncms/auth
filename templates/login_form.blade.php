@@ -13,7 +13,7 @@
         ])
 
         <button type="submit" name="submit" class="btn btn-primary"><?= __('Log in') ?></button>
-        <a href="/profile/skl.php?continue" class="btn btn-link"><?= __('Forgot password?') ?></a>
+        <a href="<?= $data['restorePasswordUrl'] ?>" class="btn btn-link"><?= __('Forgot password?') ?></a>
         <div class="mt-3">
             <a href="<?= $data['registrationUrl'] ?>" class="me-2"><?= __('Registration') ?></a>
         </div>
