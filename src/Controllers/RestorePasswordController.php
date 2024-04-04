@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Johncms\Auth\Controllers;
 
+use Johncms\Auth\Forms\ChangePasswordForm;
 use Johncms\Auth\Forms\RestorePasswordForm;
 use Johncms\Auth\Services\RestorePasswordService;
 use Johncms\Controller\BaseController;
@@ -29,7 +30,7 @@ class RestorePasswordController extends BaseController
     /**
      * @throws Throwable
      */
-    public function index(Session $session, RestorePasswordForm $form, Request $request, RestorePasswordService $restorePasswordService)
+    public function index(Session $session, RestorePasswordForm $form, Request $request, RestorePasswordService $restorePasswordService): string | RedirectResponse
     {
         if ($request->isPost()) {
             try {
@@ -57,6 +58,40 @@ class RestorePasswordController extends BaseController
                 'loginUrl'         => route('login.index'),
                 'commonErrors'     => $commonErrors ?? null,
                 'successMessage'   => $session->getFlash('successMessage'),
+            ],
+        ]);
+    }
+
+    public function changePassword(int $userId, Request $request, ChangePasswordForm $form): string | RedirectResponse
+    {
+        if ($request->isPost()) {
+            try {
+                $form->validate();
+                $values = $form->getRequestValues();
+                dd($values);
+
+                // TODO: Success page
+
+                // return (new RedirectResponse(route('auth.restorePassword')));
+            } catch (ValidationException $validationException) {
+                return (new RedirectResponse(
+                    route(
+                        'auth.restorePassword.changePassword',
+                        ['userId' => $userId],
+                        ['code' => $request->getQuery('code')]
+                    )
+                ))
+                    ->withPost()
+                    ->withValidationErrors($validationException->getErrors());
+            }
+        }
+
+        return $this->render->render('johncms/auth::change_password', [
+            'data' => [
+                'formFields'       => $form->getFormFields(),
+                'validationErrors' => $form->getValidationErrors(),
+                'storeUrl'         => route('auth.restorePassword'),
+                'loginUrl'         => route('login.index'),
             ],
         ]);
     }
